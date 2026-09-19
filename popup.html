@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ScrollFit</title>
+  <link rel="stylesheet" href="../shared/tokens.css" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div id="sf-popup" class="sf-popup">
+
+    <!-- ===== Onboarding (first run) ===== -->
+    <section id="sf-onboarding" class="sf-view" hidden>
+      <div class="sf-onb-mark">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="9" stroke="var(--pulse)" stroke-width="2"/>
+          <path d="M12 7v5l3 2" stroke="var(--pulse)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1 class="sf-onb-title">Take control of your scrolling.</h1>
+      <p class="sf-onb-sub">ScrollFit tracks how many Reels you watch and helps you stay within a daily limit.</p>
+
+      <p class="sf-onb-question">How many Reels do you want to allow yourself per day?</p>
+      <div class="sf-limit-grid" id="sf-limit-grid">
+        <button class="sf-limit-choice" data-limit="20">20</button>
+        <button class="sf-limit-choice" data-limit="30">30</button>
+        <button class="sf-limit-choice sf-selected" data-limit="50">50</button>
+        <button class="sf-limit-choice" data-limit="75">75</button>
+        <button class="sf-limit-choice" data-limit="100">100</button>
+        <button class="sf-limit-choice" data-limit="custom">Custom</button>
+      </div>
+      <input type="number" id="sf-custom-limit" class="sf-custom-input" min="1" placeholder="Enter a number" hidden />
+
+      <button class="sf-btn sf-btn-primary sf-btn-block" id="sf-set-limit-btn">Set My Limit</button>
+    </section>
+
+    <!-- ===== Confirmation after onboarding ===== -->
+    <section id="sf-onb-confirm" class="sf-view" hidden>
+      <div class="sf-onb-mark sf-onb-mark-mint">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12.5l4.5 4.5L19 7" stroke="var(--mint)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <p class="sf-onb-confirm-text">Your daily Reel limit is</p>
+      <p class="sf-onb-confirm-limit num" id="sf-confirm-limit-value">50</p>
+      <button class="sf-btn sf-btn-primary sf-btn-block" id="sf-open-instagram-btn">Open Instagram</button>
+      <button class="sf-btn sf-btn-ghost sf-btn-block" id="sf-view-dashboard-from-confirm">View Dashboard</button>
+    </section>
+
+    <!-- ===== Main popup ===== -->
+    <section id="sf-main" class="sf-view" hidden>
+      <header class="sf-header">
+        <div class="sf-brand">
+          <span class="sf-brand-mark"></span>
+          <span class="sf-brand-name">SCROLLFIT</span>
+        </div>
+        <span class="sf-status-pill" id="sf-status-pill">Within limit</span>
+      </header>
+
+      <div class="sf-ring-row">
+        <div class="sf-ring-wrap">
+          <svg viewBox="0 0 120 120" class="sf-ring-svg">
+            <circle cx="60" cy="60" r="52" class="sf-ring-track" />
+            <circle cx="60" cy="60" r="52" class="sf-ring-progress" id="sf-ring-progress" />
+          </svg>
+          <div class="sf-ring-center">
+            <span class="sf-ring-count num" id="sf-count-value">0</span>
+            <span class="sf-ring-limit num" id="sf-limit-value">/ 50</span>
+          </div>
+        </div>
+        <div class="sf-ring-side">
+          <p class="sf-remaining-label">Today's Reels</p>
+          <p class="sf-remaining-value" id="sf-remaining-value">50 remaining</p>
+          <p class="sf-streak" id="sf-streak-value">🔥 0 day streak</p>
+          <p class="sf-score" id="sf-score-value">⭐ Daily Score 100</p>
+        </div>
+      </div>
+
+      <div class="sf-actions">
+        <button class="sf-btn sf-btn-primary sf-btn-block" id="sf-view-dashboard-btn">View Dashboard</button>
+        <button class="sf-btn sf-btn-ghost sf-btn-block" id="sf-change-limit-btn">Change Daily Limit</button>
+      </div>
+
+      <p class="sf-privacy">Your scrolling data stays on your device.</p>
+    </section>
+
+    <!-- ===== Quick change-limit panel ===== -->
+    <section id="sf-change-limit" class="sf-view" hidden>
+      <h2 class="sf-panel-title">Change daily limit</h2>
+      <div class="sf-limit-grid" id="sf-change-limit-grid">
+        <button class="sf-limit-choice" data-limit="20">20</button>
+        <button class="sf-limit-choice" data-limit="30">30</button>
+        <button class="sf-limit-choice" data-limit="50">50</button>
+        <button class="sf-limit-choice" data-limit="75">75</button>
+        <button class="sf-limit-choice" data-limit="100">100</button>
+        <button class="sf-limit-choice" data-limit="custom">Custom</button>
+      </div>
+      <input type="number" id="sf-change-custom-input" class="sf-custom-input" min="1" placeholder="Enter a number" hidden />
+      <button class="sf-btn sf-btn-primary sf-btn-block" id="sf-save-limit-btn">Save</button>
+      <button class="sf-btn sf-btn-ghost sf-btn-block" id="sf-cancel-limit-btn">Cancel</button>
+    </section>
+
+  </div>
+
+  <script src="../shared/types.js"></script>
+  <script src="../shared/storage.js"></script>
+  <script src="../shared/scoring.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+.sf-popup {
+  width: 320px;
+  padding: 20px;
+  background: var(--paper);
+}
+
+.sf-view {
+  display: flex;
+  flex-direction: column;
+}
+.sf-view[hidden] {
+  display: none;
+}
+
+/* ---------- Onboarding ---------- */
+
+.sf-onb-mark {
+  width: 52px; height: 52px; border-radius: 16px;
+  background: var(--pulse-dim);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+.sf-onb-mark-mint { background: var(--mint-dim); }
+
+.sf-onb-title {
+  font-size: 19px; font-weight: 650; letter-spacing: -0.01em; margin: 0 0 8px;
+  line-height: 1.25;
+}
+.sf-onb-sub {
+  font-size: 13.5px; color: var(--ink-soft); line-height: 1.5; margin: 0 0 18px;
+}
+.sf-onb-question {
+  font-size: 13.5px; font-weight: 600; margin: 0 0 10px;
+}
+
+.sf-limit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.sf-limit-choice {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: var(--radius-sm);
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: var(--font-display);
+}
+.sf-limit-choice:hover { border-color: var(--line-strong); }
+.sf-limit-choice.sf-selected {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper-on-ink);
+}
+
+.sf-custom-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-strong);
+  font-size: 14px;
+  margin-bottom: 12px;
+  font-family: var(--font-body);
+}
+.sf-custom-input:focus { outline: 2px solid var(--pulse); outline-offset: 1px; }
+
+.sf-onb-confirm-text { font-size: 13.5px; color: var(--ink-soft); margin: 0 0 2px; text-align: center; }
+.sf-onb-confirm-limit {
+  font-size: 40px; font-weight: 700; text-align: center; margin: 0 0 18px; color: var(--ink);
+}
+
+/* ---------- Buttons ---------- */
+
+.sf-btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.sf-btn-block { width: 100%; }
+.sf-btn-primary { background: var(--pulse); color: #fff; }
+.sf-btn-primary:hover { background: #ff7259; }
+.sf-btn-ghost { background: transparent; color: var(--ink-soft); margin-top: 6px; }
+.sf-btn-ghost:hover { color: var(--ink); }
+
+/* ---------- Main popup ---------- */
+
+.sf-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;
+}
+.sf-brand { display: flex; align-items: center; gap: 7px; }
+.sf-brand-mark {
+  width: 9px; height: 9px; border-radius: 50%; background: var(--pulse);
+  box-shadow: 0 0 0 3px var(--pulse-dim);
+}
+.sf-brand-name { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: var(--ink); }
+
+.sf-status-pill {
+  font-size: 11.5px; font-weight: 600; padding: 4px 10px; border-radius: 999px;
+  background: var(--mint-dim); color: #1c7a58;
+}
+.sf-status-pill.sf-warn { background: var(--amber-dim); color: #8a5a12; }
+.sf-status-pill.sf-over { background: var(--over-dim); color: #93222b; }
+
+.sf-ring-row { display: flex; align-items: center; gap: 18px; margin-bottom: 18px; }
+
+.sf-ring-wrap { position: relative; width: 116px; height: 116px; flex: none; }
+.sf-ring-svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.sf-ring-track { fill: none; stroke: var(--line); stroke-width: 10; }
+.sf-ring-progress {
+  fill: none; stroke: var(--mint); stroke-width: 10; stroke-linecap: round;
+  stroke-dasharray: 326.7256; stroke-dashoffset: 326.7256;
+  transition: stroke-dashoffset .6s cubic-bezier(.4,0,.2,1), stroke .3s ease;
+}
+.sf-ring-center {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+}
+.sf-ring-count { font-size: 28px; font-weight: 700; line-height: 1; }
+.sf-ring-limit { font-size: 13px; color: var(--ink-soft); }
+
+.sf-ring-side { display: flex; flex-direction: column; gap: 4px; }
+.sf-remaining-label { font-size: 11.5px; color: var(--ink-faint); margin: 0; font-weight: 600; }
+.sf-remaining-value { font-size: 14px; font-weight: 650; margin: 0 0 6px; color: var(--ink); }
+.sf-streak, .sf-score { font-size: 13px; margin: 0; color: var(--ink-soft); }
+
+.sf-actions { display: flex; flex-direction: column; }
+
+.sf-privacy {
+  text-align: center; font-size: 10.5px; color: var(--ink-faint); margin: 14px 0 0;
+}
+
+.sf-panel-title { font-size: 15px; font-weight: 650; margin: 0 0 12px; }

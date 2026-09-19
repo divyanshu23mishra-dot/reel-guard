@@ -1,0 +1,75 @@
+body { background: var(--paper); }
+
+.lp-nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 22px 48px; max-width: 1120px; margin: 0 auto;
+}
+.lp-nav-brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 15px; }
+.lp-nav-link { font-size: 13.5px; font-weight: 600; color: var(--ink-soft); text-decoration: none; }
+.lp-nav-link:hover { color: var(--ink); }
+
+.lp-hero {
+  max-width: 1120px; margin: 0 auto; padding: 56px 48px 80px;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center;
+}
+.lp-hero-text h1 {
+  font-size: 52px; line-height: 1.06; font-weight: 700; letter-spacing: -0.025em; margin: 0 0 20px;
+}
+.lp-hero-sub { font-size: 17px; color: var(--ink-soft); line-height: 1.6; max-width: 44ch; margin: 0 0 30px; }
+.lp-hero-ctas { display: flex; gap: 12px; }
+.lp-hero-ctas .sf-btn { text-decoration: none; display: inline-flex; align-items: center; }
+
+.lp-hero-mock { display: flex; justify-content: center; }
+.lp-mock-card {
+  width: 280px; background: var(--ink); border-radius: 28px; padding: 26px;
+  box-shadow: 0 24px 60px rgba(20,23,28,0.18);
+}
+.lp-mock-ring { position: relative; width: 140px; height: 140px; margin: 0 auto 18px; }
+.lp-mock-ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.lp-mock-track { fill: none; stroke: rgba(255,255,255,0.12); stroke-width: 10; }
+.lp-mock-progress {
+  fill: none; stroke: var(--mint); stroke-width: 10; stroke-linecap: round;
+  stroke-dasharray: 326.7256; stroke-dashoffset: 88;
+}
+.lp-mock-ring-center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.lp-mock-count { font-size: 30px; font-weight: 700; color: var(--paper-on-ink); line-height: 1; }
+.lp-mock-limit { font-size: 13px; color: var(--ink-soft-on-ink); }
+.lp-mock-row { display: flex; justify-content: space-between; color: var(--paper-on-ink); font-size: 13px; font-weight: 600; margin-bottom: 18px; }
+.lp-mock-bars { display: flex; align-items: flex-end; gap: 6px; height: 56px; }
+.lp-mock-bars span { flex: 1; background: var(--pulse); border-radius: 4px 4px 0 0; opacity: 0.85; }
+
+.lp-section { max-width: 1120px; margin: 0 auto; padding: 64px 48px; }
+.lp-section h2 { font-size: 26px; font-weight: 700; letter-spacing: -0.015em; margin: 0 0 32px; }
+.lp-section-alt { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); max-width: none; padding: 72px 48px; }
+.lp-why { max-width: 1120px; margin: 0 auto; }
+.lp-why-copy { font-size: 18px; line-height: 1.65; color: var(--ink-soft); max-width: 62ch; }
+
+.lp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 22px; }
+.lp-steps li { display: flex; gap: 18px; align-items: flex-start; }
+.lp-step-num {
+  flex: none; width: 34px; height: 34px; border-radius: 50%; background: var(--pulse-dim); color: var(--pulse);
+  display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;
+}
+.lp-steps h3 { margin: 2px 0 4px; font-size: 15.5px; font-weight: 650; }
+.lp-steps p { margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+
+.lp-progress-demo { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px 32px; }
+.lp-progress-bars { display: flex; align-items: flex-end; gap: 14px; height: 100px; margin-bottom: 16px; }
+.lp-progress-bars span { flex: 1; background: var(--mint); border-radius: 6px 6px 0 0; }
+.lp-progress-caption { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+
+.lp-privacy { text-align: center; }
+.lp-privacy p { font-size: 16px; color: var(--ink-soft); margin: 0; }
+
+.lp-footer {
+  border-top: 1px solid var(--line); padding: 28px 48px; display: flex; justify-content: space-between;
+  max-width: 1120px; margin: 0 auto; font-size: 12.5px; color: var(--ink-faint);
+}
+
+@media (max-width: 860px) {
+  .lp-hero { grid-template-columns: 1fr; padding: 40px 24px 56px; }
+  .lp-hero-text h1 { font-size: 38px; }
+  .lp-section, .lp-section-alt { padding: 48px 24px; }
+  .lp-nav { padding: 18px 24px; }
+  .lp-footer { padding: 24px; flex-direction: column; gap: 8px; }
+}

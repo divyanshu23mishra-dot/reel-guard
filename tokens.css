@@ -1,0 +1,111 @@
+/*
+  ScrollFit design tokens.
+  Palette concept: "vital signs for your attention" — an activity-ring
+  metaphor borrowed from fitness wearables, rendered in an ink/paper
+  duotone with a single pulse accent. Flat surfaces + hairline borders,
+  not soft SaaS-card shadows. Tabular numerals for every stat.
+*/
+:root {
+  /* Core palette */
+  --ink: #14171c;          /* primary dark surface */
+  --ink-soft: #545b66;      /* secondary text on paper */
+  --ink-faint: #9aa1ab;     /* tertiary text / placeholders */
+  --paper: #f7f8f4;         /* app background, cool off-white */
+  --surface: #ffffff;       /* card surface on paper */
+  --line: #e3e5df;          /* hairline border */
+  --line-strong: #cdd0c8;
+
+  --pulse: #ff5b3d;         /* signal / brand accent (coral-red) */
+  --pulse-dim: #ffe3db;     /* pulse tint background */
+  --mint: #2fbf8f;          /* within-limit / success */
+  --mint-dim: #dcf5ea;
+  --amber: #e8a33d;         /* near-limit warning */
+  --amber-dim: #faead2;
+  --over: #d64550;          /* over-limit */
+  --over-dim: #fbdfe0;
+
+  /* Dark surfaces (popup, block screen) */
+  --ink-800: #1c2027;
+  --ink-700: #262b33;
+  --ink-600: #333a44;
+  --paper-on-ink: #eef0eb;
+  --ink-soft-on-ink: #9aa1ab;
+
+  /* Type */
+  --font-display: -apple-system, "SF Pro Rounded", "Segoe UI", ui-rounded, system-ui, sans-serif;
+  --font-body: -apple-system, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+
+  /* Radius + spacing rhythm */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  --shadow-card: 0 1px 2px rgba(20, 23, 28, 0.04);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-family: var(--font-display);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  letter-spacing: -0.02em;
+}
+
+button {
+  font-family: inherit;
+}
+
+a { color: inherit; }
+
+/*
+  Base button styles, shared by every surface (popup, dashboard, landing).
+  Individual pages may override sizing (padding/font-size) but should not
+  need to redefine color and background per variant.
+*/
+.sf-btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+  font-family: var(--font-body);
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+.sf-btn-primary { background: var(--pulse); color: #fff; }
+.sf-btn-primary:hover { background: #ff7259; }
+.sf-btn-secondary { background: var(--surface); border: 1px solid var(--line-strong); color: var(--ink); }
+.sf-btn-secondary:hover { border-color: var(--ink-soft); }
+.sf-btn-ghost { background: transparent; color: var(--ink-soft); }
+.sf-btn-ghost:hover { color: var(--ink); }
+.sf-btn-danger { background: var(--over-dim); color: #93222b; }
+.sf-btn-danger:hover { background: #f8ccce; }
+
+::selection { background: var(--pulse-dim); color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
